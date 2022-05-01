@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Modelo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asstes/css/style.css">
+    <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+    <title>Buscador de CPF</title>
 </head>
-
 <body>
+    <nav class="heading">
+        <div class="main-content">
+            <h1>Buscador<i class="logo">CEP</i></h1>
+        </div>
+    </nav>
+    <section class="main-section">
+        <div class="main-content">
+            <label for="input-cep" class="label-input-cep" >Digite seu CEP</label>
+            <div class="input-container">
+                <input type="text" placeholder="Digite o CEP" maxlength="8" id="input-cep">
+                <button class="btn-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg>
+                </button>
+            </div>
+            <div class="cep-dados">
+                <p class="cep"></p>
+                <p class="rua"></p>
+                <p class="bairro"></p>
+                <p class="cidade"></p>
+                <p class="estado"></p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="main-content">
 
-  <section class="container">
-    <h1>Lorem ipsum dolor sit amet</h1>
-  </section>
-
-  <script src="./assets/js/bundle.js"></script>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./asstes/js/main.js"></script>
 </body>
-
 </html>
