@@ -60,8 +60,15 @@ class BuscadorDeCEP{
     httpRequest(cep){
         axios(`${this.baseUrl}${cep}/json/`)
         .then(response => {
-            this.addToDOM(response.data)
-            
+           const responseObj = response.data
+           if(Object.keys(responseObj).length === 1){
+                this.invalidCEPError()
+                this.clearInput()
+           }
+           else{
+               this.addToDOM(responseObj)
+               this.clearInput()
+           }
         })
         .catch(e => {
             this.clearDOM()
@@ -102,6 +109,17 @@ class BuscadorDeCEP{
         this.bairro.innerHTML = ''
         this.cidade.innerHTML = ''
         this.estado.innerHTML = ''
+    }
+
+    invalidCEPError(){
+        this.cep.innerHTML = 'CEP INVALIDO'
+        this.rua.innerHTML = ''
+        this.bairro.innerHTML = ''
+        this.cidade.innerHTML = ''
+        this.estado.innerHTML = ''
+    }
+    clearInput(){
+        this.input.value = ''
     }
     
  
